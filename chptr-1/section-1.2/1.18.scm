@@ -1,0 +1,6 @@
+(define (fast-iter-* a b)
+  (define (fast-iter a b n)
+    (cond ((= b 0) n)
+          ((even? b) (fast-iter (double a) (/ b 2) n))
+          (else (fast-iter a (- b 1) (+ a n)))))
+  (fast-iter a b 0))
