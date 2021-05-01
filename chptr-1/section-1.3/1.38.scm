@@ -1,0 +1,10 @@
+(load "chptr-1/section-1.3/1.37.scm")
+
+(define (e)
+  (+ (cont-frac (lambda (x) 1.0)
+                (lambda (x)
+                        (if (= (remainder (+ x 1) 3) 0)
+                            (* 2 (/ (+ x 1) 3))
+                            1))
+                12) 
+     2))
