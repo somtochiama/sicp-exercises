@@ -1,3 +1,5 @@
+(define (square x) (* x x))
+
 (define (smallest-divisor n) (find-divisor n 2))
 
 (define (find-divisor n test-divisor)
