@@ -3,7 +3,7 @@
 ; (1 + sqrt(5)) / 2 is the golden ratio
 ; Therefore, the golden ratio is a fixed point of the transformation x -> 1 + 1/x
 
-(define tolerance 0.00001)
+(define tolerance 0.00000001)
 (define (fixed-point f first-guess)
   (define (close-enough? v1 v2)
     (< (abs (- v1 v2))
@@ -13,6 +13,7 @@
          (if (close-enough? guess next)
              next
              (try next))))
+  (trace try)
 (try first-guess))
 
 (define (golden-ratio) 
