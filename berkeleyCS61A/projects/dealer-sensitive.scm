@@ -1,0 +1,5 @@
+(define (dealer-sensitive cards dealers-card)
+  (let ((dealers-point (first-part dealers-card))
+        (total (best-total cards)))
+    (or (and (contains? '(A 7 8 9 10 J Q K) dealers-point) (< total 17))
+        (and (contains? '(2 3 4 5 6) dealers-point) (< total 12)))))
