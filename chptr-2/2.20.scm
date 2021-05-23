@@ -1,0 +1,11 @@
+(define (parity? a)
+  (if (odd? a) odd? even?))
+
+(define (same-parity a . b)
+  (define parity (parity? a))
+  (define (iter arr)
+    (cond ((null? arr) '())
+          ((parity (car arr))
+           (cons (car arr) (iter (cdr arr))))
+          (else (iter (cdr arr)))))
+  (cons a (iter b)))

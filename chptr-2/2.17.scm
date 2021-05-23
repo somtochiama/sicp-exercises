@@ -1,2 +1,6 @@
-; Please see https://en.wikipedia.org/wiki/Interval_arithmetic#Dependency_problem
-; My hand no reach this one :)
+(define (last-pair list)
+  (if (empty? list)
+      (error "can't get pair of empty list")
+      (if (null? (cdr list))
+          (car list)
+          (last-pair (cdr list)))))
